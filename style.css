@@ -1,0 +1,836 @@
+/* ===========================
+   GLOBAL THEME (PURPLE LOVE)
+=========================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0b0014, #1a0033, #2b004f, #12001f);
+  color: #ffffff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: rgba(80, 0, 120, 0.25);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-left h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f4d9ff;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===========================
+   MUSIC BUTTON
+=========================== */
+.music-btn {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 18px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0px 0px 15px rgba(236, 72, 153, 0.35);
+  transition: 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 22px rgba(168, 85, 247, 0.5);
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+
+  background: 
+    linear-gradient(to bottom, rgba(11, 0, 20, 0.45), rgba(43, 0, 79, 0.55)),
+    url("assets/heroSection.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: inset 0px -80px 120px rgba(0, 0, 0, 0.65);
+}
+
+
+
+.hero h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #f3d1ff;
+  text-shadow: 0px 0px 20px rgba(168, 85, 247, 0.4);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  color: #e7caff;
+}
+
+.start-btn {
+  margin-top: 25px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0px 0px 18px rgba(236, 72, 153, 0.35);
+  transition: 0.3s ease;
+  align-self: center;
+  width: fit-content;
+  display: inline-block;
+}
+
+
+
+.start-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 25px rgba(168, 85, 247, 0.6);
+}
+
+/* ===========================
+   SECTION STYLING
+=========================== */
+.section {
+  padding: 70px 20px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #f3d1ff;
+  text-shadow: 0px 0px 10px rgba(168, 85, 247, 0.25);
+}
+
+/* ===========================
+   CARD STYLE
+=========================== */
+.card {
+  background: rgba(110, 0, 160, 0.12);
+  padding: 28px;
+  margin: 22px auto;
+  max-width: 800px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Handwritten look */
+.handwritten {
+  font-family: "Segoe Script", cursive;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #ffe8ff;
+}
+
+/* ===========================
+   GALLERY SLIDER
+=========================== */
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.slider img {
+  width: 260px;
+  height: 340px;
+  border-radius: 22px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 0px 18px rgba(168, 85, 247, 0.25);
+  transition: 0.3s ease;
+}
+
+.slider img:hover {
+  transform: scale(1.05);
+}
+
+.slide-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #f3d1ff;
+  transition: 0.3s ease;
+}
+
+.slide-btn:hover {
+  background: rgba(168, 85, 247, 0.25);
+  transform: scale(1.1);
+}
+
+#sliderCaption {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #e7caff;
+  font-style: italic;
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+.timeline {
+  max-width: 650px;
+  margin: auto;
+}
+
+.timeline-item {
+  padding: 16px 18px;
+  margin: 14px 0;
+  border-left: 4px solid #ec4899;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  color: #ffe8ff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ===========================
+   CHAT SIMULATION
+=========================== */
+.chatbox {
+  max-width: 520px;
+  margin: auto;
+  background: rgba(110, 0, 160, 0.15);
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.msg {
+  padding: 12px 16px;
+  margin: 10px;
+  border-radius: 18px;
+  max-width: 80%;
+  font-size: 1rem;
+}
+
+.me {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  margin-left: auto;
+  color: white;
+}
+
+.her {
+  background: rgba(255, 255, 255, 0.12);
+  margin-right: auto;
+  color: #ffe8ff;
+}
+
+/* ===========================
+   FORGIVENESS BUTTONS
+=========================== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.yes-btn, .no-btn {
+  padding: 13px 28px;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.yes-btn {
+  background: linear-gradient(to right, #22c55e, #4ade80);
+  color: white;
+  box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.3);
+}
+
+.no-btn {
+  background: linear-gradient(to right, #ef4444, #f87171);
+  color: white;
+  box-shadow: 0px 0px 15px rgba(239, 68, 68, 0.3);
+}
+
+.yes-btn:hover, .no-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ===========================
+   PROMISE RING
+=========================== */
+.ring {
+  font-size: 5rem;
+  animation: bounce 2s infinite;
+  text-shadow: 0px 0px 20px rgba(236, 72, 153, 0.35);
+}
+
+.promise-text {
+  font-size: 1.1rem;
+  color: #ffe8ff;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+/* ===========================
+   UNIVERSE PAGE
+=========================== */
+.universe {
+  background: radial-gradient(circle at top, rgba(168, 85, 247, 0.35), transparent 70%),
+              linear-gradient(to bottom, #0b0014, #1a0033, #2b004f);
+  padding: 110px 20px;
+}
+
+.universe p {
+  font-size: 1.2rem;
+  color: #f4d9ff;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* ===========================
+   SURPRISE HEART
+=========================== */
+.hidden-heart {
+  font-size: 4.5rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s ease;
+  text-shadow: 0px 0px 25px rgba(236, 72, 153, 0.4);
+}
+
+.hidden-heart:hover {
+  transform: scale(1.25);
+}
+
+#secretMessage {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  color: #ffe8ff;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  padding: 22px;
+  background: rgba(80, 0, 120, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f4d9ff;
+}
+
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  from {
+    top: 100vh;
+    opacity: 1;
+  }
+  to {
+    top: -10vh;
+    opacity: 0;
+  }
+}
+
+/* ===========================
+   CONFETTI
+=========================== */
+.confetti {
+  position: fixed;
+  top: -20px;
+  width: 8px;
+  height: 12px;
+  background: white;
+  opacity: 0.85;
+  z-index: 99999;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(120vh) rotate(720deg);
+  }
+}
+
+
+/* ===========================
+   BOUNCE ANIMATION
+=========================== */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+
+/* ===========================
+   MODAL POPUP (MUSIC REQUEST)
+=========================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(110, 0, 160, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 30px;
+  border-radius: 25px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0px 0px 30px rgba(168, 85, 247, 0.4);
+  animation: popIn 0.4s ease;
+}
+
+.modal-content h2 {
+  color: #f3d1ff;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  color: #ffe8ff;
+  line-height: 1.7;
+}
+
+.modal-btn {
+  margin-top: 18px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: white;
+  box-shadow: 0px 0px 18px rgba(236, 72, 153, 0.35);
+  transition: 0.3s ease;
+}
+
+.modal-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 24px rgba(168, 85, 247, 0.6);
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.no-btn {
+  transition: 0.3s ease;
+}
+
+
+/* ===========================
+   MEMORIES DECK CAROUSEL
+=========================== */
+.deck-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.deck-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #f3d1ff;
+  transition: 0.3s ease;
+}
+
+.deck-btn:hover {
+  background: rgba(168, 85, 247, 0.25);
+  transform: scale(1.12);
+}
+
+.deck-container {
+  position: relative;
+  width: 700px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-card {
+  position: absolute;
+  width: 240px;
+  height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: 0.5s ease;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.deck-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Focus Card */
+.deck-card.active {
+  transform: scale(1.1);
+  filter: blur(0px);
+  z-index: 5;
+  opacity: 1;
+}
+
+/* Side Cards */
+.deck-card.left,
+.deck-card.right {
+  transform: scale(0.9);
+  filter: blur(2px);
+  opacity: 0.65;
+  z-index: 2;
+}
+
+/* Far Cards */
+.deck-card.far-left,
+.deck-card.far-right {
+  transform: scale(0.75);
+  filter: blur(4px);
+  opacity: 0.35;
+  z-index: 1;
+}
+
+.deck-caption {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #e7caff;
+  font-style: italic;
+}
+
+/* ===========================
+   AUTO SCROLL LIST
+=========================== */
+.scroll-box {
+  max-width: 650px;
+  height: 220px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(110, 0, 160, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  animation: scrollUp 16s linear infinite;
+}
+
+.scroll-content p {
+  padding: 12px 10px;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffe8ff;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+
+/* ===========================
+   TIMELINE POPUP IMAGE
+=========================== */
+.popup-item {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.popup-item:hover {
+  transform: scale(1.03);
+  background: rgba(168, 85, 247, 0.18);
+}
+
+.popup-img {
+  position: absolute;
+  right: -130px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 150px;
+  border-radius: 18px;
+  object-fit: cover;
+  opacity: 0;
+  filter: blur(2px);
+  transition: 0.4s ease;
+  box-shadow: 0px 0px 18px rgba(0,0,0,0.6);
+  border: 2px solid rgba(255,255,255,0.15);
+  pointer-events: none;
+}
+
+.popup-item:hover .popup-img {
+  opacity: 0.8;
+  right: -150px;
+}
+
+#mistakes .scroll-content {
+  animation: scrollUp 20s linear infinite;
+}
+#changing .scroll-content {
+  animation: scrollUp 18s linear infinite;
+}
+
+
+
+/* ===========================
+   MOBILE RESPONSIVE (iPhone 13)
+=========================== */
+@media (max-width: 430px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .nav-left h2 {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .music-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-radius: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 85vh;
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .start-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+
+  /* Sections */
+  .section {
+    padding: 35px 15px;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Cards */
+  .card {
+    padding: 18px;
+    border-radius: 20px;
+    margin: 12px auto;
+  }
+
+  .handwritten {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Deck Carousel */
+  .deck-container {
+    width: 320px;
+    height: 300px;
+  }
+
+  .deck-card {
+    width: 200px;
+    height: 270px;
+  }
+
+  .deck-card.active {
+    transform: scale(1.05);
+  }
+
+  .deck-btn {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* Scroll list box */
+  .scroll-box {
+    width: 100%;
+    height: 190px;
+  }
+
+  .scroll-content p {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /* Timeline */
+  .timeline {
+    width: 100%;
+  }
+
+  .timeline-item {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+
+  /* Hide popup images on mobile */
+  .popup-img {
+    display: none;
+  }
+
+  /* Chat box */
+  .chatbox {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .msg {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  /* Buttons */
+  .buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .yes-btn, .no-btn {
+    width: 80%;
+    max-width: 250px;
+    margin: auto;
+    font-size: 1rem;
+  }
+
+  /* Ring */
+  .ring {
+    font-size: 4rem;
+  }
+
+  .promise-text {
+    font-size: 1rem;
+  }
+
+  /* Modal */
+  .modal-content {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+  }
+
+  .modal-btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Jaanu ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Hearts -->
+  <div id="hearts-container"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="assets/logo.png" class="logo" alt="logo">
+      <h2>For My Jaanu ❤️</h2>
+    </div>
+    <button class="music-btn" onclick="toggleMusic()">🎶 Play</button>
+  </nav>
+
+  <!-- 1. Landing Page -->
+  <section class="hero">
+    <h1>Hi Jaanu...</h1>
+    <p>Can you give me 2 minutes? 🥺</p>
+    <button class="start-btn" onclick="startJourney()">Start 💌</button>
+  </section>
+
+  <!-- 2. Apology Letter -->
+  <section id="apology" class="section">
+    <h2>My Apology 💌</h2>
+    <div class="card handwritten">
+      <p id="apologyText"></p>
+    </div>
+  </section>
+
+  <!-- 3. Memories Gallery -->
+  <section id="memories" class="section">
+  <h2>Our Memories 🖼️</h2>
+
+  <div class="deck-carousel">
+    <button class="deck-btn" onclick="prevDeck()">⬅</button>
+
+    <div class="deck-container" id="deckContainer">
+      <div class="deck-card"><img src="assets/photo1.jpg" alt=""></div>
+      <div class="deck-card"><img src="assets/photo2.jpg" alt=""></div>
+      <div class="deck-card"><img src="assets/photo3.jpg" alt=""></div>
+      <div class="deck-card"><img src="assets/photo4.jpg" alt=""></div>
+      <div class="deck-card"><img src="assets/photo5.jpg" alt=""></div>
+    </div>
+
+    <button class="deck-btn" onclick="nextDeck()">➡</button>
+  </div>
+
+  <p class="deck-caption" id="deckCaption">This smile is my peace 💜</p>
+</section>
+
+
+  <!-- 4. Reasons I Love You -->
+  <section id="reasons" class="section">
+  <h2>Reasons I Love You 🌸</h2>
+
+  <div class="scroll-box">
+    <div class="scroll-content">
+      <p>The way you care even when you’re upset 💜</p>
+      <p>Your voice feels like home 🥺</p>
+      <p>Your smile fixes my worst days ❤️</p>
+      <p>You are my peace in chaos 🌙</p>
+      <p>You make me want to be better 💍</p>
+      <p>You are my jaanu, my forever 💜</p>
+
+      <!-- repeat copy for infinite effect -->
+      <p>The way you care even when you’re upset 💜</p>
+      <p>Your voice feels like home 🥺</p>
+      <p>Your smile fixes my worst days ❤️</p>
+      <p>You are my peace in chaos 🌙</p>
+      <p>You make me want to be better 💍</p>
+      <p>You are my jaanu, my forever 💜</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 5. Timeline -->
+  <section id="timeline" class="section">
+  <h2>Our Journey ⏳</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item popup-item">
+      ✨ The day we met
+      <img src="assets/photo1.jpg" class="popup-img" alt="">
+    </div>
+
+    <div class="timeline-item popup-item">
+      📞 Our first call
+      <img src="assets/photo2.jpg" class="popup-img" alt="">
+    </div>
+
+    <div class="timeline-item popup-item">
+      ❤️ Our first "I love you"
+      <img src="assets/photo3.jpg" class="popup-img" alt="">
+    </div>
+
+    <div class="timeline-item popup-item">
+      🌙 Late night talks
+      <img src="assets/photo4.jpg" class="popup-img" alt="">
+    </div>
+
+    <div class="timeline-item popup-item">
+      💍 The promise of forever
+      <img src="assets/photo5.jpg" class="popup-img" alt="">
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- 6. What I Should’ve Done -->
+  <section id="mistakes" class="section">
+  <h2>What I Should’ve Done 🥀</h2>
+
+  <div class="scroll-box">
+    <div class="scroll-content">
+      <p>I should’ve listened calmly 🥺</p>
+      <p>I should’ve understood your feelings 💜</p>
+      <p>I should’ve controlled my ego 😭</p>
+      <p>I should’ve chosen you over anger ❤️</p>
+      <p>I should’ve been softer with you 🌙</p>
+
+      <!-- repeat -->
+      <p>I should’ve listened calmly 🥺</p>
+      <p>I should’ve understood your feelings 💜</p>
+      <p>I should’ve controlled my ego 😭</p>
+      <p>I should’ve chosen you over anger ❤️</p>
+      <p>I should’ve been softer with you 🌙</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 7. I'm Changing -->
+  <section id="changing" class="section">
+  <h2>I’m Changing 🧸</h2>
+
+  <div class="scroll-box">
+    <div class="scroll-content">
+      <p>I will listen more and react less 💜</p>
+      <p>I will respect your emotions always ❤️</p>
+      <p>I will control my anger 🥺</p>
+      <p>I will protect your heart 💍</p>
+      <p>I will love you better every day 🌙</p>
+
+      <!-- repeat -->
+      <p>I will listen more and react less 💜</p>
+      <p>I will respect your emotions always ❤️</p>
+      <p>I will control my anger 🥺</p>
+      <p>I will protect your heart 💍</p>
+      <p>I will love you better every day 🌙</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 8. Hidden Surprise -->
+  <section id="surprise" class="section">
+    <h2>One Small Surprise 🎁</h2>
+    <p>Click the heart below 👇</p>
+    <div class="hidden-heart" onclick="showSecret()">❤️</div>
+    <p id="secretMessage"></p>
+  </section>
+
+  <!-- 9. Video Message -->
+  <section id="video" class="section">
+    <h2>A Message From Me 🎥</h2>
+    <div class="card">
+      <video controls width="100%">
+        <source src="assets/video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- 10. Chat Simulation -->
+  <section id="chat" class="section">
+    <h2>Us Talking 💬</h2>
+    <div class="chatbox">
+      <div class="msg me">Jaanu… I messed up 🥺</div>
+      <div class="msg her">Hmm… 😡</div>
+      <div class="msg me">I don’t want to lose you…</div>
+      <div class="msg her">Then why hurt me?</div>
+      <div class="msg me">Because I was stupid… please forgive me ❤️</div>
+    </div>
+  </section>
+
+  <!-- 11. Forgiveness Choice -->
+  <section id="forgive" class="section">
+    <h2>Will You Forgive Me? 🥺❤️</h2>
+    <div class="buttons">
+      <button class="yes-btn" onclick="forgiveYes()">Yes ❤️</button>
+      <button class="no-btn" id="noBtn" onmouseover="moveNoButton()">No 😡</button>
+    </div>
+    <p id="responseText"></p>
+  </section>
+
+  <!-- 12. Promise Ring Page -->
+  <section id="promise" class="section">
+    <h2>A Promise 💍</h2>
+    <div class="ring">💍</div>
+    <p class="promise-text">
+      I promise to protect your heart… not break it.  
+      You are my jaanu, my forever.
+    </p>
+  </section>
+
+  <!-- 13. Long Distance Map -->
+  <section id="map" class="section">
+    <h2>Distance Means Nothing 🌍</h2>
+    <div class="card">
+      <p>Me ➝ ❤️ ➝ You</p>
+      <p class="mapline">📍 Your City -------- ❤️ -------- 📍 Her City</p>
+    </div>
+  </section>
+
+  <!-- 14. Universe Page -->
+  <section id="universe" class="section universe">
+    <h2>You Are My Universe ⭐</h2>
+    <p>
+      If love had a sky… you would be my brightest star.  
+      My jaanu, you are my forever.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by Mudassir for his Jaanu</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Music Modal -->
+<div id="musicModal" class="modal">
+  <div class="modal-content">
+    <h2>🎶 One small request jaanu 💜</h2>
+    <p>
+      Please can you play the music <b>🎵</b><br>
+      and attach the headphones <b>🎧</b><br>
+      to continue...
+    </p>
+
+    <button class="modal-btn" onclick="closeModal()">Okay 💜</button>
+  </div>
+</div>
+
+<!-- Final Ending Modal -->
+<div id="finalModal" class="modal">
+  <div class="modal-content">
+    <h2>💜 My Jaanu...</h2>
+    <p>
+      This is just the end of this slide...<br>
+      <b>the real journey begins here.</b> ❤️<br><br>
+
+      I promise to always take care of you — through thick and thin.<br>
+      And I will always love you till my last breath...<br>
+      and the life after. 💍✨<br><br>
+
+      Please bear with my imperfections...<br>
+      I will become the best version of myself for you. 💜
+    </p>
+
+    <button class="modal-btn" onclick="closeFinalModal()">Okay jaanu 💜</button>
+  </div>
+</div>
+
+
+</body>
+</html>
