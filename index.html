@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Jaanu ❤️</title>
+  <title>My Heart Belongs To You 💜</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
   <nav class="navbar">
     <div class="nav-left">
       <img src="assets/logo.png" class="logo" alt="logo">
-      <h2>For My Jaanu ❤️</h2>
+      <h2>My Heart Belongs To You 💜</h2>
     </div>
     <button class="music-btn" onclick="toggleMusic()">🎶 Play</button>
   </nav>
@@ -42,151 +43,183 @@
 
   <!-- 3. Memories Gallery -->
   <section id="memories" class="section">
-  <h2>Our Memories 🖼️</h2>
+    <h2>Our Memories 🖼️</h2>
+    <p class="memories-intro" id="memoriesIntroText"></p>
 
-  <div class="deck-carousel">
-    <button class="deck-btn" onclick="prevDeck()">⬅</button>
+    <div class="deck-carousel">
+      <button class="deck-btn" onclick="prevDeck()">⬅</button>
 
-    <div class="deck-container" id="deckContainer">
-      <div class="deck-card"><img src="assets/photo1.jpg" alt=""></div>
-      <div class="deck-card"><img src="assets/photo2.jpg" alt=""></div>
-      <div class="deck-card"><img src="assets/photo3.jpg" alt=""></div>
-      <div class="deck-card"><img src="assets/photo4.jpg" alt=""></div>
-      <div class="deck-card"><img src="assets/photo5.jpg" alt=""></div>
+      <div class="deck-container" id="deckContainer">
+        <div class="deck-card"><img src="assets/photo1.jpeg" alt=""></div>
+        <div class="deck-card"><img src="assets/photo2.jpeg" alt=""></div>
+        <div class="deck-card"><img src="assets/photo3.jpeg" alt=""></div>
+        <div class="deck-card"><img src="assets/photo4.jpeg" alt=""></div>
+        <div class="deck-card"><img src="assets/photo5.jpeg" alt=""></div>
+      </div>
+
+      <button class="deck-btn" onclick="nextDeck()">➡</button>
     </div>
 
-    <button class="deck-btn" onclick="nextDeck()">➡</button>
-  </div>
-
-  <p class="deck-caption" id="deckCaption">This smile is my peace 💜</p>
-</section>
-
+    <p class="deck-caption" id="deckCaption">This smile is my peace 💜</p>
+    <p class="swipe-hint">👆 Swipe left/right on mobile</p>
+  </section>
 
   <!-- 4. Reasons I Love You -->
   <section id="reasons" class="section">
-  <h2>Reasons I Love You 🌸</h2>
+    <h2>Reasons I Love You 🌸</h2>
 
-  <div class="scroll-box">
-    <div class="scroll-content">
-      <p>The way you care even when you’re upset 💜</p>
-      <p>Your voice feels like home 🥺</p>
-      <p>Your smile fixes my worst days ❤️</p>
-      <p>You are my peace in chaos 🌙</p>
-      <p>You make me want to be better 💍</p>
-      <p>You are my jaanu, my forever 💜</p>
+    <div class="scroll-box">
+      <div class="scroll-content">
+        <p>The way you understand me without words 🥺💜</p>
+        <p>Your anger is scary… but your love is softer than anything ❤️</p>
+        <p>The way you still care even when you’re hurt 😭💜</p>
+        <p>Your smile feels like my reward 🌙</p>
+        <p>Your little talks make my whole day better 🥹</p>
+        <p>The way you say my name… it melts me ❤️</p>
+        <p>You make me feel safe even from miles away 🌍💜</p>
+        <p>Your voice is my favorite comfort 🧸</p>
+        <p>You are my best decision 💍</p>
+        <p>You make love feel real and pure 🌸</p>
+        <p>You are not just my jaanu… you are my home 🏡💜</p>
+        <p>You make my heart calm in chaos 🌙</p>
+        <p>The way you laugh… it heals me instantly 😭❤️</p>
+        <p>You’re the most beautiful part of my life 💜✨</p>
+        <p>Even your silence means something to me 🥺</p>
+        <p>You make me want to become a better man 💍💜</p>
+        <p>Your love is my biggest blessing 😭💜</p>
+        <p>You are my forever prayer ❤️🤲</p>
+        <p>I love you because you never gave up on us 💜</p>
 
-      <!-- repeat copy for infinite effect -->
-      <p>The way you care even when you’re upset 💜</p>
-      <p>Your voice feels like home 🥺</p>
-      <p>Your smile fixes my worst days ❤️</p>
-      <p>You are my peace in chaos 🌙</p>
-      <p>You make me want to be better 💍</p>
-      <p>You are my jaanu, my forever 💜</p>
+        <p>The way you understand me without words 🥺💜</p>
+        <p>Your anger is scary… but your love is softer than anything ❤️</p>
+        <p>The way you still care even when you’re hurt 😭💜</p>
+        <p>Your smile feels like my reward 🌙</p>
+        <p>Your little talks make my whole day better 🥹</p>
+        <p>The way you say my name… it melts me ❤️</p>
+        <p>You make me feel safe even from miles away 🌍💜</p>
+        <p>Your voice is my favorite comfort 🧸</p>
+        <p>You are my best decision 💍</p>
+        <p>You make love feel real and pure 🌸</p>
+        <p>You are not just my jaanu… you are my home 🏡💜</p>
+        <p>You make my heart calm in chaos 🌙</p>
+        <p>The way you laugh… it heals me instantly 😭❤️</p>
+        <p>You’re the most beautiful part of my life 💜✨</p>
+        <p>Even your silence means something to me 🥺</p>
+        <p>You make me want to become a better man 💍💜</p>
+        <p>Your love is my biggest blessing 😭💜</p>
+        <p>You are my forever prayer ❤️🤲</p>
+        <p>I love you because you never gave up on us 💜</p>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- 5. Timeline -->
   <section id="timeline" class="section">
-  <h2>Our Journey ⏳</h2>
+    <h2>Our Journey ⏳</h2>
+    <p class="timeline-hint">💜 Tap any moment to relive it</p>
 
-  <div class="timeline">
+    <div class="timeline">
+      <div class="timeline-item popup-item" onclick="openImageModal('assets/poster.png','✨ Most Memorable day for both of us', this)">
+        ✨ Most Memorable day for both of us
+        <img src="assets/Poster.png" class="popup-img" alt="">
+      </div>
 
-    <div class="timeline-item popup-item">
-      ✨ The day we met
-      <img src="assets/photo1.jpg" class="popup-img" alt="">
+      <div class="timeline-item popup-item" onclick="openImageModal('assets/calls.png','📞 Our first Video call', this)">
+        📞 Our first Video call
+        <img src="assets/calls.png" class="popup-img" alt="">
+      </div>
+
+
+      <div class="timeline-item popup-item" onclick="openImageModal('assets/chats.png','🌙 Late night talks', this)">
+        🌙 Late night talks
+        <img src="assets/chats.png" class="popup-img" alt="">
+      </div>
+
+      <div class="timeline-item popup-item" onclick="openImageModal('assets/promises.png','💍 This time I am going keep them for real', this)">
+        💍 Our Promises
+        <img src="assets/promises.png" class="popup-img" alt="">
+      </div>
     </div>
-
-    <div class="timeline-item popup-item">
-      📞 Our first call
-      <img src="assets/photo2.jpg" class="popup-img" alt="">
-    </div>
-
-    <div class="timeline-item popup-item">
-      ❤️ Our first "I love you"
-      <img src="assets/photo3.jpg" class="popup-img" alt="">
-    </div>
-
-    <div class="timeline-item popup-item">
-      🌙 Late night talks
-      <img src="assets/photo4.jpg" class="popup-img" alt="">
-    </div>
-
-    <div class="timeline-item popup-item">
-      💍 The promise of forever
-      <img src="assets/photo5.jpg" class="popup-img" alt="">
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- 6. What I Should’ve Done -->
   <section id="mistakes" class="section">
-  <h2>What I Should’ve Done 🥀</h2>
+    <h2>What I Should’ve Done 🥀</h2>
 
-  <div class="scroll-box">
-    <div class="scroll-content">
-      <p>I should’ve listened calmly 🥺</p>
-      <p>I should’ve understood your feelings 💜</p>
-      <p>I should’ve controlled my ego 😭</p>
-      <p>I should’ve chosen you over anger ❤️</p>
-      <p>I should’ve been softer with you 🌙</p>
+    <div class="scroll-box">
+      <div class="scroll-content">
+        <p>I should’ve never hurt your feelings 🥺</p>
+        <p>I should’ve understood how you felt 💜</p>
+        <p>I should’ve listened to you properly 😭</p>
+        <p>I should’ve kept my promises ❤️</p>
+        <p>I should’ve been a better version of myself 🌙</p>
+        <p>I should’ve protected your heart, not tested it 💍</p>
+        <p>I should’ve handled things maturely 🥺</p>
 
-      <!-- repeat -->
-      <p>I should’ve listened calmly 🥺</p>
-      <p>I should’ve understood your feelings 💜</p>
-      <p>I should’ve controlled my ego 😭</p>
-      <p>I should’ve chosen you over anger ❤️</p>
-      <p>I should’ve been softer with you 🌙</p>
+        <p>I should’ve never hurt your feelings 🥺</p>
+        <p>I should’ve understood how you felt 💜</p>
+        <p>I should’ve listened to you properly 😭</p>
+        <p>I should’ve kept my promises ❤️</p>
+        <p>I should’ve been a better version of myself 🌙</p>
+        <p>I should’ve protected your heart, not tested it 💍</p>
+        <p>I should’ve handled things maturely 🥺</p>
+      </div>
     </div>
-  </div>
-</section>
-
+    <h2>I know I messed up. but this truely is the last time I mess up</h2>
+  </section>
 
   <!-- 7. I'm Changing -->
   <section id="changing" class="section">
-  <h2>I’m Changing 🧸</h2>
+    <h2>I’m Changing - and I mean it 💞</h2>
 
-  <div class="scroll-box">
-    <div class="scroll-content">
-      <p>I will listen more and react less 💜</p>
-      <p>I will respect your emotions always ❤️</p>
-      <p>I will control my anger 🥺</p>
-      <p>I will protect your heart 💍</p>
-      <p>I will love you better every day 🌙</p>
+    <div class="scroll-box">
+      <div class="scroll-content">
+        <p>I will listen more and react less 💜</p>
+        <p>I will always respect your emotions ❤️</p>
+        <p>I will always keep my promises 🥺</p>
+        <p>I will protect your heart 💍</p>
+        <p>I will love you better every single day 🌙</p>
+        <p>I will support you in every situation ❤️</p>
+        <p>I will always remind you how precious you are 🌸</p>
+        <p>I will fight for us💜</p>
 
-      <!-- repeat -->
-      <p>I will listen more and react less 💜</p>
-      <p>I will respect your emotions always ❤️</p>
-      <p>I will control my anger 🥺</p>
-      <p>I will protect your heart 💍</p>
-      <p>I will love you better every day 🌙</p>
+        <p>I will listen more and react less 💜</p>
+        <p>I will respect your emotions always ❤️</p>
+        <p>I will control my anger 🥺</p>
+        <p>I will protect your heart 💍</p>
+        <p>I will love you better every day 🌙</p>
+        <p>I will support you in every situation ❤️</p>
+        <p>I will always remind you how precious you are 🌸</p>
+        <p>I will fight for us💜</p>
+      </div>
     </div>
+  </section>
+
+  <!-- 8. Hidden Surprise -->
+  <section id="surprise" class="section">
+  <!-- <h2>One Small Surprise 🎁</h2> -->
+  <h2>Click the heart below 👇</h2>
+
+  <div class="hidden-heart" onclick="showHug()">❤️</div>
+
+  <div id="hugBox" class="hug-box">
+    <img src="assets/hug.gif" class="hug-gif" alt="hug">
+    <p id="hugMessage"></p>
   </div>
 </section>
 
 
-  <!-- 8. Hidden Surprise -->
-  <section id="surprise" class="section">
-    <h2>One Small Surprise 🎁</h2>
-    <p>Click the heart below 👇</p>
-    <div class="hidden-heart" onclick="showSecret()">❤️</div>
-    <p id="secretMessage"></p>
-  </section>
-
   <!-- 9. Video Message -->
   <section id="video" class="section">
-    <h2>A Message From Me 🎥</h2>
+    <h2>A Message For you 🎥</h2>
     <div class="card">
-      <video controls width="100%">
+      <video id="loveVideo" controls width="100%">
         <source src="assets/video.mp4" type="video/mp4">
       </video>
     </div>
   </section>
 
-  <!-- 10. Chat Simulation -->
+  <!-- 10. Chat Simulation
   <section id="chat" class="section">
     <h2>Us Talking 💬</h2>
     <div class="chatbox">
@@ -196,14 +229,14 @@
       <div class="msg her">Then why hurt me?</div>
       <div class="msg me">Because I was stupid… please forgive me ❤️</div>
     </div>
-  </section>
+  </section> -->
 
   <!-- 11. Forgiveness Choice -->
   <section id="forgive" class="section">
     <h2>Will You Forgive Me? 🥺❤️</h2>
     <div class="buttons">
       <button class="yes-btn" onclick="forgiveYes()">Yes ❤️</button>
-      <button class="no-btn" id="noBtn" onmouseover="moveNoButton()">No 😡</button>
+      <button class="no-btn" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No 😡</button>
     </div>
     <p id="responseText"></p>
   </section>
@@ -214,68 +247,87 @@
     <div class="ring">💍</div>
     <p class="promise-text">
       I promise to protect your heart… not break it.  
-      You are my jaanu, my forever.
+      You are my love, my forever.
     </p>
   </section>
 
   <!-- 13. Long Distance Map -->
-  <section id="map" class="section">
+  <!-- <section id="map" class="section">
     <h2>Distance Means Nothing 🌍</h2>
     <div class="card">
       <p>Me ➝ ❤️ ➝ You</p>
       <p class="mapline">📍 Your City -------- ❤️ -------- 📍 Her City</p>
     </div>
-  </section>
+  </section> -->
 
   <!-- 14. Universe Page -->
   <section id="universe" class="section universe">
     <h2>You Are My Universe ⭐</h2>
     <p>
       If love had a sky… you would be my brightest star.  
-      My jaanu, you are my forever.
+      Hurriyah, you are my forever.
     </p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>Made with ❤️ by Mudassir for his Jaanu</p>
+    <p>Made with ❤️ by Mudassir for my heart</p>
   </footer>
 
-  <script src="script.js"></script>
   <!-- Music Modal -->
-<div id="musicModal" class="modal">
-  <div class="modal-content">
-    <h2>🎶 One small request jaanu 💜</h2>
-    <p>
-      Please can you play the music <b>🎵</b><br>
-      and attach the headphones <b>🎧</b><br>
-      to continue...
-    </p>
+  <div id="musicModal" class="modal">
+    <div class="modal-content">
+      <h2>🎶 One small request jaanu 💜</h2>
+      <p>
+        Please can you play the music <b>🎵</b><br>
+        and attach the headphones <b>🎧</b><br>
+        to continue...
+      </p>
+      <button class="modal-btn" onclick="playMusicAndContinue()">Play Music 🎶</button>
+<!-- <button class="modal-btn secondary-btn" onclick="closeModal()">Not now</button> -->
 
-    <button class="modal-btn" onclick="closeModal()">Okay 💜</button>
+    </div>
+  </div>
+
+  <!-- Final Ending Modal -->
+  <div id="finalModal" class="modal">
+    <div class="modal-content">
+      <h2>💜 My Jaanu...</h2>
+      <p>
+        This is just the end of this slide...<br>
+        <b>My love for you will never end</b> ❤️<br><br>
+
+        I promise to always Love you.<br>
+        till my last breath...<br>
+        and the life after. 💍✨<br><br>
+
+        Please bear with my imperfections...<br>
+        I will become the best version of myself for you. 💜
+      </p>
+
+      <button class="modal-btn" onclick="closeFinalModal()">Love you soo much my Hurriyah ❤️ ~ Mudassir</button>
+    </div>
+  </div>
+
+  <!-- Timeline Image Modal -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content image-modal-content">
+      <p id="imageTitle">Memory 💜</p>
+      <img id="modalImage" src="" alt="">
+      <button class="modal-btn" onclick="closeImageModal()">Close 💜</button>
+    </div>
+  </div>
+
+  <div id="imageModal" class="modal">
+  <div class="modal-content image-modal-content">
+    <h2 id="imageTitle">Memory 💜</h2>
+    <img id="modalImage" src="" alt="">
+    <br>
+    <button class="modal-btn" onclick="closeImageModal()">Close 💜</button>
   </div>
 </div>
 
-<!-- Final Ending Modal -->
-<div id="finalModal" class="modal">
-  <div class="modal-content">
-    <h2>💜 My Jaanu...</h2>
-    <p>
-      This is just the end of this slide...<br>
-      <b>the real journey begins here.</b> ❤️<br><br>
 
-      I promise to always take care of you — through thick and thin.<br>
-      And I will always love you till my last breath...<br>
-      and the life after. 💍✨<br><br>
-
-      Please bear with my imperfections...<br>
-      I will become the best version of myself for you. 💜
-    </p>
-
-    <button class="modal-btn" onclick="closeFinalModal()">Okay jaanu 💜</button>
-  </div>
-</div>
-
-
+  <script src="script.js"></script>
 </body>
 </html>

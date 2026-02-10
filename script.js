@@ -1,12 +1,12 @@
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
+  typeApology();
+  updateDeck();
 });
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
-
-
 
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -35,38 +35,55 @@ function toggleMusic() {
 function startJourney() {
   if (!musicPlaying) {
     document.getElementById("musicModal").style.display = "flex";
+    document.body.style.overflow = "hidden";
     return;
   }
+
+  continueJourney();
+}
+
+function continueJourney() {
 
   if (!heartsStarted) {
     startHearts();
     heartsStarted = true;
   }
 
-  scrollToSection("apology");
+  // Smooth slow transition
+  setTimeout(() => {
+    document.getElementById("apology").scrollIntoView({ behavior: "smooth" });
+  }, 400);
 }
+
+
+function playMusicAndContinue() {
+  let music = document.getElementById("bgMusic");
+  let btn = document.querySelector(".music-btn");
+
+  music.play();
+  musicPlaying = true;
+  btn.innerText = "⏸ Pause";
+
+  document.getElementById("musicModal").style.display = "none";
+  document.body.style.overflow = "auto";
+
+  continueJourney();
+}
+
 
 function closeModal() {
   document.getElementById("musicModal").style.display = "none";
 }
 
-
-
 /* Floating Hearts Function */
 function startHearts() {
   setInterval(() => {
-
     let random = Math.random();
-    let heartSymbol = "❤️"; // default red
+    let heartSymbol = "❤️";
 
-    // 70% Red, 20% Purple, 10% Pink
-    if (random < 0.70) {
-      heartSymbol = "❤️";
-    } else if (random < 0.90) {
-      heartSymbol = "💜";
-    } else {
-      heartSymbol = "💗";
-    }
+    if (random < 0.70) heartSymbol = "❤️";
+    else if (random < 0.90) heartSymbol = "💜";
+    else heartSymbol = "💗";
 
     let heart = document.createElement("div");
     heart.innerHTML = heartSymbol;
@@ -78,10 +95,8 @@ function startHearts() {
     document.getElementById("hearts-container").appendChild(heart);
 
     setTimeout(() => heart.remove(), 6000);
-
-  }, 350); // faster hearts (more romantic)
+  }, 350);
 }
-
 
 /* Apology typing effect */
 const apologyMessage = `My jaanu... I know I hurt you, and I hate that I became the reason for your sadness.
@@ -101,15 +116,44 @@ function typeApology() {
     setTimeout(typeApology, 35);
   }
 }
-window.onload = typeApology;
 
-/* Gallery slider */
+let memoriesTyped = false;
+
+const memoriesMessage = "Now jaanu... let us relive all the beautiful memories we made together 💜";
+
+function typeMemoriesIntro() {
+  const target = document.getElementById("memoriesIntroText");
+  let j = 0;
+
+  function type() {
+    if (j < memoriesMessage.length) {
+      target.innerHTML += memoriesMessage.charAt(j);
+      j++;
+      setTimeout(type, 35);
+    }
+  }
+  type();
+}
+
+window.addEventListener("scroll", () => {
+  const memoriesSection = document.getElementById("memories");
+  const sectionTop = memoriesSection.getBoundingClientRect().top;
+
+  // When section comes into view
+  if (sectionTop < window.innerHeight - 150 && !memoriesTyped) {
+    memoriesTyped = true;
+    typeMemoriesIntro();
+  }
+});
+
+
+/* Deck Carousel */
 const deckImages = [
-  { caption: "This smile is my peace 💜" },
+  { caption: "This smile is my peace and happiness💜" },
   { caption: "My favorite memory 🌙" },
   { caption: "You are my happiness 😭💜" },
-  { caption: "Forever with you 💍💜" },
-  { caption: "My jaanu, my world ❤️" }
+  { caption: "My jaanu, my world ❤️" },
+  { caption: "Forever with you 💍💜" }
 ];
 
 let deckIndex = 0;
@@ -118,7 +162,7 @@ function updateDeck() {
   const cards = document.querySelectorAll(".deck-card");
   const caption = document.getElementById("deckCaption");
 
-  cards.forEach((card, i) => {
+  cards.forEach((card) => {
     card.className = "deck-card";
   });
 
@@ -136,15 +180,6 @@ function updateDeck() {
   cards[farLeft].classList.add("far-left");
   cards[farRight].classList.add("far-right");
 
-  // Position them like deck
-  cards[active].style.left = "230px";
-
-  cards[left].style.left = "80px";
-  cards[right].style.left = "380px";
-
-  cards[farLeft].style.left = "0px";
-  cards[farRight].style.left = "460px";
-
   caption.innerText = deckImages[deckIndex].caption;
 }
 
@@ -158,8 +193,56 @@ function prevDeck() {
   updateDeck();
 }
 
+/* Swipe support for mobile */
+let startX = 0;
+const deckContainer = document.getElementById("deckContainer");
+
+deckContainer.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+deckContainer.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  let diff = startX - endX;
+
+  if (diff > 50) nextDeck();
+  if (diff < -50) prevDeck();
+});
+
+/* Auto Play Carousel */
+let autoDeckInterval;
+
+function startAutoDeck() {
+  autoDeckInterval = setInterval(() => {
+    nextDeck();
+  }, 3500); // change speed here (3.5 sec)
+}
+
+function stopAutoDeck() {
+  clearInterval(autoDeckInterval);
+}
+
+/* Start autoplay when page loads */
 window.addEventListener("load", () => {
-  updateDeck();
+  startAutoDeck();
+});
+
+/* Pause autoplay when user interacts */
+deckContainer.addEventListener("touchstart", () => {
+  stopAutoDeck();
+});
+
+deckContainer.addEventListener("touchend", () => {
+  startAutoDeck();
+});
+
+/* Pause on hover (desktop) */
+deckContainer.addEventListener("mouseenter", () => {
+  stopAutoDeck();
+});
+
+deckContainer.addEventListener("mouseleave", () => {
+  startAutoDeck();
 });
 
 
@@ -174,22 +257,53 @@ function forgiveYes() {
   document.getElementById("responseText").innerHTML =
     "😭💜 YAYYY!! Thank you jaanu... I promise I’ll never hurt you again. You are my forever 💍✨";
 
+  const noBtn = document.getElementById("noBtn");
+
+  // Get button position
+  const rect = noBtn.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  // Create burst particles
+  for (let i = 0; i < 25; i++) {
+    let particle = document.createElement("div");
+    particle.classList.add("burst-particle");
+
+    particle.style.left = centerX + "px";
+    particle.style.top = centerY + "px";
+
+    const x = (Math.random() * 200 - 100) + "px";
+    const y = (Math.random() * 200 - 100) + "px";
+
+    particle.style.setProperty("--x", x);
+    particle.style.setProperty("--y", y);
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => particle.remove(), 900);
+  }
+
+  // Button burst animation
+  noBtn.style.transition = "0.5s ease";
+  noBtn.style.transform = "scale(1.6) rotate(20deg)";
+  noBtn.style.opacity = "0";
+
+  setTimeout(() => {
+    noBtn.style.display = "none";
+  }, 500);
+
   confettiEffect();
 }
 
-function forgiveNo() {
-  document.getElementById("responseText").innerHTML =
-    "🥺 Okay jaanu... I understand. But I’ll still keep trying until I see your smile again 💜";
-}
+
+
 let noHoverCount = 0;
 
 function moveNoButton() {
   const noBtn = document.getElementById("noBtn");
-  const section = document.getElementById("forgive");
 
   noHoverCount++;
 
-  // Random movement range
   const x = Math.random() * 250 - 125;
   const y = Math.random() * 150 - 75;
 
@@ -197,39 +311,66 @@ function moveNoButton() {
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
 
-  // Cute messages after attempts
   const responseText = document.getElementById("responseText");
 
   if (noHoverCount === 2) {
     responseText.innerHTML = "😳 Oii jaanu... why you going near NO?";
-  } 
-  else if (noHoverCount === 4) {
+  } else if (noHoverCount === 4) {
     responseText.innerHTML = "🥺 Pleaseee jaanu... don’t click no 😭💜";
-  } 
-  else if (noHoverCount === 6) {
+  } else if (noHoverCount === 6) {
     responseText.innerHTML = "😤 No button is not allowed for my jaanu 😭❤️";
-  } 
-  else if (noHoverCount === 8) {
+  } else if (noHoverCount === 8) {
     responseText.innerHTML = "💍 Jaanu I cannot take NO as an answer... only YES 😭💜";
-  } 
-  else if (noHoverCount >= 10) {
+  } else if (noHoverCount >= 10) {
     responseText.innerHTML = "😭 Okay okayyy I surrender... please forgive me jaanu ❤️";
   }
 }
 
 /* Confetti Effect */
 function confettiEffect() {
-  for (let i = 0; i < 100; i++) {
-    let confetti = document.createElement("div");
-    confetti.classList.add("confetti");
-    confetti.style.left = Math.random() * 100 + "vw";
-    confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
-    document.body.appendChild(confetti);
 
-    setTimeout(() => confetti.remove(), 4000);
+  // 🔥 Burst at start (instant petals)
+  for (let i = 0; i < 40; i++) {
+    createPetal();
   }
+
+  // 🌸 Then smooth rain
+  let petalsCount = 0;
+
+  const petalInterval = setInterval(() => {
+    createPetal();
+    petalsCount++;
+
+    if (petalsCount >= 90) {
+      clearInterval(petalInterval);
+    }
+  }, 80);
+
 }
 
+/* Helper function */
+function createPetal() {
+  let petal = document.createElement("div");
+  petal.classList.add("confetti");
+
+  petal.style.left = Math.random() * 100 + "vw";
+
+  const size = Math.random() * 8 + 10;
+  petal.style.width = size + "px";
+  petal.style.height = (size - 3) + "px";
+
+  petal.style.animationDuration = (Math.random() * 3 + 5) + "s";
+  petal.style.animationDelay = (Math.random() * 1.2) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => petal.remove(), 10000);
+}
+
+
+
+
+/* Final Modal on Scroll Bottom */
 let finalModalOpen = false;
 
 window.addEventListener("scroll", () => {
@@ -244,7 +385,6 @@ window.addEventListener("scroll", () => {
     finalModalOpen = true;
   }
 
-  // Reset when user scrolls up a bit
   if (!reachedBottom) {
     finalModalOpen = false;
   }
@@ -253,5 +393,171 @@ window.addEventListener("scroll", () => {
 function closeFinalModal() {
   document.getElementById("finalModal").style.display = "none";
 }
+
+/* Timeline image modal */
+function openImageModal(imgSrc, title) {
+  document.getElementById("imageTitle").innerText = title;
+  document.getElementById("modalImage").src = imgSrc;
+  document.getElementById("imageModal").style.display = "flex";
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("imageModal");
+  modal.classList.remove("show");
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 300);
+}
+
+
+function openImageModal(imgSrc, title) {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("imageTitle");
+
+  modalTitle.innerText = title;
+  modalImage.src = imgSrc;
+
+  modal.style.display = "flex";
+
+  setTimeout(() => {
+    modal.classList.add("show");
+  }, 20);
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("imageModal");
+
+  modal.classList.remove("show");
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 350);
+}
+
+document.getElementById("imageModal").addEventListener("click", function(e) {
+  if (e.target.id === "imageModal") {
+    closeImageModal();
+  }
+});
+
+
+let hugTyped = false;
+
+function showHug() {
+  const hugBox = document.getElementById("hugBox");
+  const hugMessage = document.getElementById("hugMessage");
+  const heart = document.querySelector(".hidden-heart");
+
+  // Heart pulse
+  heart.classList.add("clicked");
+  setTimeout(() => heart.classList.remove("clicked"), 700);
+
+  // Show hug box smoothly
+  hugBox.style.display = "block";
+
+  setTimeout(() => {
+    hugBox.classList.add("show");
+
+    // Scroll slightly to hug gif
+    hugBox.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  }, 50);
+
+  // Confetti every click
+  sideConfettiEffect();
+
+  // Type message only once
+  if (hugTyped) return;
+  hugTyped = true;
+
+  const message =
+    "😭💜 A virtual hug for my jaanu 🧸❤️\n" +
+    "I’m holding you tight\n" +
+    "and I promise I’ll never let you down ever again 🌙💍";
+
+  let index = 0;
+  hugMessage.innerHTML = "";
+
+  function typeHug() {
+    if (index < message.length) {
+      hugMessage.innerHTML += message.charAt(index) === "\n" ? "<br>" : message.charAt(index);
+      index++;
+      setTimeout(typeHug, 35);
+    }
+  }
+
+  typeHug();
+}
+
+
+function sideConfettiEffect() {
+
+  // 🔥 Burst at start
+  for (let i = 0; i < 80; i++) {
+    createSideSparkle();
+  }
+
+  // ✨ Then smooth stream
+  let count = 0;
+
+  const sparkleInterval = setInterval(() => {
+    createSideSparkle();
+    count++;
+
+    if (count >= 140) {
+      clearInterval(sparkleInterval);
+    }
+  }, 60);
+}
+
+/* Helper function */
+function createSideSparkle() {
+  let confetti = document.createElement("div");
+  confetti.classList.add("confetti-side");
+
+  const side = Math.random() < 0.5 ? "left" : "right";
+  confetti.style.top = Math.random() * 100 + "vh";
+
+  const size = Math.random() * 5 + 4;
+  confetti.style.width = size + "px";
+  confetti.style.height = size + "px";
+
+  confetti.style.animationDelay = (Math.random() * 0.6) + "s";
+  confetti.style.animationDuration = (Math.random() * 2 + 4) + "s";
+
+  const drift = (Math.random() * 200 - 100) + "px";
+  confetti.style.setProperty("--drift", drift);
+
+  if (side === "left") {
+    confetti.style.left = "-15px";
+    confetti.style.animationName = "shootRight";
+  } else {
+    confetti.style.left = "100vw";
+    confetti.style.animationName = "shootLeft";
+  }
+
+  document.body.appendChild(confetti);
+
+  setTimeout(() => confetti.remove(), 7000);
+}
+
+
+const bgMusic = document.getElementById("bgMusic");
+const loveVideo = document.getElementById("loveVideo");
+
+
+loveVideo.addEventListener("play", () => {
+  bgMusic.volume = 0.15; // reduce volume
+});
+
+loveVideo.addEventListener("pause", () => {
+  bgMusic.volume = 1.0; // normal volume
+});
+
+loveVideo.addEventListener("ended", () => {
+  bgMusic.volume = 1.0;
+});
 
 
