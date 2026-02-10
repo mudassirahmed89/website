@@ -9,8 +9,17 @@ window.onbeforeunload = function () {
 };
 
 function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  const section = document.getElementById(id);
+  const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+  const y = section.getBoundingClientRect().top + window.scrollY - navbarHeight - 15;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
 }
+
 
 /* Music */
 let musicPlaying = false;
@@ -108,14 +117,27 @@ you are my peace, my happiness, my home.
 Please forgive me jaanu...
 I promise I will be better — not with words, but with actions 💜`;
 
-let i = 0;
+let apologyIndex = 0;
+let apologyStarted = false;
+
 function typeApology() {
-  if (i < apologyMessage.length) {
-    document.getElementById("apologyText").innerHTML += apologyMessage.charAt(i);
-    i++;
-    setTimeout(typeApology, 35);
+  if (apologyIndex < apologyMessage.length) {
+    document.getElementById("apologyText").innerHTML += apologyMessage.charAt(apologyIndex);
+    apologyIndex++;
+    setTimeout(typeApology,89);
   }
 }
+
+// Start typing only when section is visible
+window.addEventListener("scroll", () => {
+  const apologySection = document.getElementById("apology");
+  const rect = apologySection.getBoundingClientRect();
+
+  if (!apologyStarted && rect.top < window.innerHeight - 100) {
+    apologyStarted = true;
+    typeApology();
+  }
+});
 
 let memoriesTyped = false;
 
