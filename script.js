@@ -571,7 +571,7 @@ const loveVideo = document.getElementById("loveVideo");
 
 
 loveVideo.addEventListener("play", () => {
-  bgMusic.volume = 0.15; // reduce volume
+  bgMusic.volume = 0.10; // reduce volume
 });
 
 loveVideo.addEventListener("pause", () => {
